@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "aubsmugg/display-posts",
+  "version": "0.1.0",
+  "title": "Display Posts",
+  "category": "widgets",
+  "icon": "visibility",
+  "description": "Display content with options to filter by post type, taxonomy, author, and date.",
+  "keywords": [
+    "post",
+    "slider",
+    "display",
+    "news",
+    "feed",
+    "list",
+    "event",
+    "latest",
+    "query",
+    "sticky",
+    "blog"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "aubsmugg",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "postsPerPage": {
+      "type": "integer",
+      "default": 12
+    },
+    "sort": {
+      "type": "string",
+      "default": "date/desc"
+    },
+    "categories": {
+      "type": "object",
+      "default": {
+        "relation": "AND",
+        "selected": []
+      },
+      "properties": {
+        "relation": {
+          "type": "string",
+          "default": "AND"
+        },
+        "selected": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "postTypes": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "object",
+      "default": {
+        "relation": "AND",
+        "selected": []
+      },
+      "properties": {
+        "relation": {
+          "type": "string",
+          "default": "AND"
+        },
+        "selected": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "manualActive": {
+      "type": "boolean",
+      "default": false
+    },
+    "manualPosts": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}
